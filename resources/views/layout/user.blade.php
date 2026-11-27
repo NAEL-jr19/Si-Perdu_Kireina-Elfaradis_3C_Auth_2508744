@@ -88,7 +88,6 @@
 					@endauth
 				</div><!--- END Col -->
 
-
 				<ul class="mobile_menu">
 					<li><a href="{{ route('user.beranda') }}">Home</a></li>
 					<li><a href="{{ route('user.katalog-buku') }}">Katalog Buku</a></li>
@@ -110,120 +109,120 @@
 					@endauth
 				</ul>
 
-			</div><!--- END ROW -->
-		</div><!--- END CONTAINER -->
-	</div>
-	<!-- END NAVBAR -->
+				<!-- START MAIN CONTENT -->
+				@yield('content')
+				<!-- END MAIN CONTENT -->
 
-	<!-- START MAIN CONTENT -->
-	@yield('content')
-	<!-- END MAIN CONTENT -->
+				<!-- START FOOTER -->
+				<div class="footer section-padding">
+					<div class="container">
+						<div class="row">
+							<div class="col-lg-3 col-sm-6 col-xs-12">
+								<div class="single_footer">
+									<a href="{{ route('user.beranda') }}"><img
+											src="{{ asset('assetsUser/img/logo.png') }}" alt="Logo"></a>
+									<p>Sistem Perpustakaan Terpadu untuk memudahkan pencarian dan peminjaman koleksi
+										buku.</p>
+									<div class="social_profile">
+										<ul>
+											<li><a class="f_facebook" href="#"><i class="fa-solid fa-x"></i></a></li>
+											<li><a class="f_twitter" href="#"><i
+														class="fa-brands fa-facebook-f"></i></a></li>
+											<li><a class="f_instagram" href="#"><i
+														class="fa-brands fa-instagram"></i></a></li>
+											<li><a class="f_linkedin" href="#"><i
+														class="fa-brands fa-linkedin-in"></i></a></li>
+										</ul>
+									</div>
+								</div>
+							</div><!--- END COL -->
+							<div class="col-lg-2 col-sm-6 col-xs-12">
+								<div class="single_footer">
+									<h4>Navigasi</h4>
+									<ul>
+										<li><a href="{{ route('user.beranda') }}">Home</a></li>
+										<li><a href="{{ route('user.katalog-buku') }}">Katalog Buku</a></li>
+										@auth
+											@if (Auth::user()->isAdmin())
+												<li><a href="{{ route('admin.dashboard') }}">Admin</a></li>
+											@endif
+										@endauth
 
-	<!-- START FOOTER -->
-	<div class="footer section-padding">
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-3 col-sm-6 col-xs-12">
-					<div class="single_footer">
-						<a href="{{ route('user.beranda') }}"><img src="{{ asset('assetsUser/img/logo.png') }}"
-								alt="Logo"></a>
-						<p>Sistem Perpustakaan Terpadu untuk memudahkan pencarian dan peminjaman koleksi buku.</p>
-						<div class="social_profile">
-							<ul>
-								<li><a class="f_facebook" href="#"><i class="fa-solid fa-x"></i></a></li>
-								<li><a class="f_twitter" href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
-								<li><a class="f_instagram" href="#"><i class="fa-brands fa-instagram"></i></a></li>
-								<li><a class="f_linkedin" href="#"><i class="fa-brands fa-linkedin-in"></i></a></li>
-							</ul>
-						</div>
-					</div>
-				</div><!--- END COL -->
-				<div class="col-lg-2 col-sm-6 col-xs-12">
-					<div class="single_footer">
-						<h4>Navigasi</h4>
-						<ul>
-							<li><a href="{{ route('user.beranda') }}">Home</a></li>
-							<li><a href="{{ route('user.katalog-buku') }}">Katalog Buku</a></li>
-							@auth
-								@if (Auth::user()->isAdmin())
-									<li><a href="{{ route('admin.dashboard') }}">Admin</a></li>
-								@endif
-							@endauth
+									</ul>
+								</div>
+							</div><!--- END COL -->
+							<div class="col-lg-2 col-sm-6 col-xs-12">
+								<div class="single_footer">
+									<h4>Kategori Buku</h4>
+									<ul>
+										<li><a href="#">Fiksi & Novel</a></li>
+										<li><a href="#">Sains & Teknologi</a></li>
+										<li><a href="#">Sejarah</a></li>
+										<li><a href="#">Pengembangan Diri</a></li>
+									</ul>
+								</div>
+							</div><!--- END COL -->
+							<div class="col-lg-3 col-sm-6 col-xs-12">
+								<div class="single_footer">
+									<h4>Info Kontak</h4>
+									<div class="sf_contact">
+										<span class="ti-map"></span>
+										<p>Jl. Perpustakaan No. 1, Indonesia</p>
+									</div>
+									<div class="sf_contact">
+										<span class="ti-mobile"></span>
+										<p>+62 812 3456 7890</p>
+									</div>
+									<div class="sf_contact">
+										<span class="ti-email"></span>
+										<p>info@perpustakaan.id</p>
+									</div>
+								</div>
+							</div><!--- END COL -->
+							<div class="col-lg-2 col-sm-6 col-xs-12">
+								<div class="single_footer">
+									<h4>Download App</h4>
+									<p>Unduh aplikasi perpustakaan di Play Store dan App Store.</p>
+									<a href="#"><img src="{{ asset('assetsUser/img/google-play.jpg') }}"
+											class="foot_img" alt=""></a>
+									<a href="#"><img src="{{ asset('assetsUser/img/app-store.jpg') }}" class="foot_img"
+											alt=""></a>
+								</div>
+							</div><!--- END COL -->
+						</div><!--- END ROW -->
+					</div><!--- END CONTAINER -->
+				</div>
+				<!-- END FOOTER -->
 
-						</ul>
+				<!-- START FOOTER COPYRIGHT -->
+				<div class="foot_copy">
+					<div class="footer_copyright">
+						<p>&copy; 2026 Sistem Perpustakaan Terpadu. All Rights Reserved.</p>
 					</div>
-				</div><!--- END COL -->
-				<div class="col-lg-2 col-sm-6 col-xs-12">
-					<div class="single_footer">
-						<h4>Kategori Buku</h4>
-						<ul>
-							<li><a href="#">Fiksi & Novel</a></li>
-							<li><a href="#">Sains & Teknologi</a></li>
-							<li><a href="#">Sejarah</a></li>
-							<li><a href="#">Pengembangan Diri</a></li>
-						</ul>
-					</div>
-				</div><!--- END COL -->
-				<div class="col-lg-3 col-sm-6 col-xs-12">
-					<div class="single_footer">
-						<h4>Info Kontak</h4>
-						<div class="sf_contact">
-							<span class="ti-map"></span>
-							<p>Jl. Perpustakaan No. 1, Indonesia</p>
-						</div>
-						<div class="sf_contact">
-							<span class="ti-mobile"></span>
-							<p>+62 812 3456 7890</p>
-						</div>
-						<div class="sf_contact">
-							<span class="ti-email"></span>
-							<p>info@perpustakaan.id</p>
-						</div>
-					</div>
-				</div><!--- END COL -->
-				<div class="col-lg-2 col-sm-6 col-xs-12">
-					<div class="single_footer">
-						<h4>Download App</h4>
-						<p>Unduh aplikasi perpustakaan di Play Store dan App Store.</p>
-						<a href="#"><img src="{{ asset('assetsUser/img/google-play.jpg') }}" class="foot_img"
-								alt=""></a>
-						<a href="#"><img src="{{ asset('assetsUser/img/app-store.jpg') }}" class="foot_img" alt=""></a>
-					</div>
-				</div><!--- END COL -->
-			</div><!--- END ROW -->
-		</div><!--- END CONTAINER -->
-	</div>
-	<!-- END FOOTER -->
+				</div>
+				<!-- END FOOTER COPYRIGHT -->
 
-	<!-- START FOOTER COPYRIGHT -->
-	<div class="foot_copy">
-		<div class="footer_copyright">
-			<p>&copy; 2026 Sistem Perpustakaan Terpadu. All Rights Reserved.</p>
-		</div>
-	</div>
-	<!-- END FOOTER COPYRIGHT -->
-
-	<!-- Latest jQuery -->
-	<script src="{{ asset('assetsUser/js/jquery-1.12.4.min.js') }}"></script>
-	<!-- Latest compiled and minified Bootstrap -->
-	<script src="{{ asset('assetsUser/bootstrap/js/bootstrap.min.js') }}"></script>
-	<!-- modernizer JS -->
-	<script src="{{ asset('assetsUser/js/modernizr-2.8.3.min.js') }}"></script>
-	<!-- jquery-simple-mobilemenu.min -->
-	<script src="{{ asset('assetsUser/js/jquery-simple-mobilemenu.js') }}"></script>
-	<!-- owl-carousel min js  -->
-	<script src="{{ asset('assetsUser/owlcarousel/js/owl.carousel.min.js') }}"></script>
-	<!-- magnific-popup js -->
-	<script src="{{ asset('assetsUser/js/jquery.magnific-popup.min.js') }}"></script>
-	<!-- countTo js -->
-	<script src="{{ asset('assetsUser/js/jquery.inview.min.js') }}"></script>
-	<!-- scrolltopcontrol js -->
-	<script src="{{ asset('assetsUser/js/scrolltopcontrol.js') }}"></script>
-	<!-- WOW - Reveal Animations When You Scroll -->
-	<script src="{{ asset('assetsUser/js/wow.min.js') }}"></script>
-	<!-- scripts js -->
-	<script src="{{ asset('assetsUser/js/scripts.js') }}"></script>
-	@stack('scripts')
+				<!-- Latest jQuery -->
+				<script src="{{ asset('assetsUser/js/jquery-1.12.4.min.js') }}"></script>
+				<!-- Latest compiled and minified Bootstrap -->
+				<script src="{{ asset('assetsUser/bootstrap/js/bootstrap.min.js') }}"></script>
+				<!-- modernizer JS -->
+				<script src="{{ asset('assetsUser/js/modernizr-2.8.3.min.js') }}"></script>
+				<!-- jquery-simple-mobilemenu.min -->
+				<script src="{{ asset('assetsUser/js/jquery-simple-mobilemenu.js') }}"></script>
+				<!-- owl-carousel min js  -->
+				<script src="{{ asset('assetsUser/owlcarousel/js/owl.carousel.min.js') }}"></script>
+				<!-- magnific-popup js -->
+				<script src="{{ asset('assetsUser/js/jquery.magnific-popup.min.js') }}"></script>
+				<!-- countTo js -->
+				<script src="{{ asset('assetsUser/js/jquery.inview.min.js') }}"></script>
+				<!-- scrolltopcontrol js -->
+				<script src="{{ asset('assetsUser/js/scrolltopcontrol.js') }}"></script>
+				<!-- WOW - Reveal Animations When You Scroll -->
+				<script src="{{ asset('assetsUser/js/wow.min.js') }}"></script>
+				<!-- scripts js -->
+				<script src="{{ asset('assetsUser/js/scripts.js') }}"></script>
+				@stack('scripts')
 </body>
 
 </html>

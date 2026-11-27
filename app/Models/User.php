@@ -24,11 +24,12 @@ class User extends Authenticatable
         'role',
     ];
 
-   // Function Role Admin dibawah ini -> utk memeriksa apakah dia admin?
+   // Function Role Admin dibawah ini -> utk memeriksa apakah
     public function isAdmin(): bool
     {
         return $this->role === 'admin';
     }
+
 
 
     /**
